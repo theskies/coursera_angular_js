@@ -1,0 +1,65 @@
+<h1 style = "padding-left:20px;"> Sign Up Form </h1>
+
+<br>
+
+<form name = "signupForm" novalidate>
+
+  <div class = "form-group" style = "padding-left:20px;">
+    First Name :
+    <input type = "text" name = "firstName" style = "color:black" ng-model = "SignUpCtrl.firstName" required>
+    <span ng-if = "signupForm.firstName.$error.required && signupForm.firstName.$touched" style="color:red;">
+      First Name is required
+    </span>
+  </div><br>
+
+  <div class = "form-group" style = "padding-left:20px;">
+    Last Name :
+    <input type = "text" name = "lastName" style = "color:black"  ng-model = "SignUpCtrl.lastName" required>
+    <span ng-if = "signupForm.lastName.$error.required && signupForm.lastName.$touched" style="color:red;">
+      Last Name is required
+    </span>
+  </div><br>
+
+  <div class = "form-group" style = "padding-left:20px;">
+    Email Address :
+    <input type = "text" name = "emailAddress" style = "color:black"  ng-model = "SignUpCtrl.emailAddress" required>
+    <span ng-if = "signupForm.emailAddress.$error.required && signupForm.emailAddress.$touched" style="color:red;">
+      Email Address is required
+    </span>
+
+  </div><br>
+
+  <div class = "form-group" style = "padding-left:20px;">
+    Phone Number :
+    <input type = "text" name = "phoneNumber" style = "color:black"  ng-model = "SignUpCtrl.phoneNumber" required>
+    <span ng-if = "signupForm.phoneNumber.$error.required && signupForm.phoneNumber.$touched" style="color:red;">
+      Phone Number is required
+    </span>
+
+  </div><br>
+
+  <div class = "form-group" style = "padding-left:20px;">
+    Favourite Dish's Menu Number :
+    <input type = "text" name = "menuNumber" style = "color:black"  ng-model = "SignUpCtrl.menuNumber" required>
+    <span ng-if = "signupForm.menuNumber.$error.required && signupForm.menuNumber.$touched" style="color:red;">
+      Menu Number is required
+    </span>
+    <div style = "padding-left:10px; color:red;">
+      <span  ng-if = "(SignUpCtrl.isMenuNumberValid() == false) && SignUpCtrl.buttonClicked()"> (No such menu number exists) </span>
+    </div>
+
+  </div><br>
+
+
+
+  <div style = "padding-left:100px;">
+    <button style = "background-color:#008000" ng-click= "SignUpCtrl.validateForm(signupForm.$valid)"> Submit </button>
+  </div><br>
+
+  <div style = "padding-left:60px;">
+    <span style = "color:green;" ng-if = "SignUpCtrl.isFormValid()"> Your information has been saved </span>
+  </div>
+
+
+
+</form>

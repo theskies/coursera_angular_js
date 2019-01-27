@@ -1,0 +1,29 @@
+<h1 style = "padding-left:20px;"> User Information </h1>
+<br>
+
+<div ng-hide="InfoCtrl.haveSignedUp()" style = "padding-left:20px; color:red;" >
+  Not Signed Up Yet! <a ui-sref="public.signup">Signup now!</a>
+</div><br>
+
+<div style = "padding-left:20px;">
+  First Name : {{InfoCtrl.userData.firstName}}
+</div><br>
+
+<div style = "padding-left:20px;">
+  Last Name : {{InfoCtrl.userData.lastName}}
+</div><br>
+
+<div style = "padding-left:20px;">
+  Email Address : {{InfoCtrl.userData.emailAddress}}
+</div><br>
+
+<div style = "padding-left:20px;">
+  Phone Number : {{InfoCtrl.userData.phoneNumber}}
+</div><br>
+
+<div style = "padding-left:20px;">
+  <p>Favourite Dish :</p>
+  <img ng-src="{{InfoCtrl.apiPath}}/images/{{InfoCtrl.userData.response.data.short_name}}.jpg"></img>
+  <p>Title : {{InfoCtrl.userData.response.data.name}}</p>
+  <p>Description : {{InfoCtrl.userData.response.data.description}}</p>
+</div><br>
